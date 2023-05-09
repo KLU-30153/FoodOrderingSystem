@@ -1,0 +1,143 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<video id="bg-video" autoplay loop muted>
+    <source src="~/videos/video1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var modelState in ViewData.ModelState.Values)
+        {
+            foreach (var error in modelState.Errors)
+            {
+                <div>@error.ErrorMessage</div>
+            }
+        }
+    </div>
+}
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form asp-action="Index" method="post">
+        <br /><br /><br /><br /><br />
+        <div class="form-group">
+            <label for="username"><b>Username:</b></label>
+            <input type="text" class="form-control" id="username" name="Username" value="@Model?.Username" required>
+        </div>
+        <div class="form-group">
+            <label for="password"><b>Password:</b></label>
+            <input type="password" class="form-control" id="password" name="Password" value="@Model?.Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </form>
+</div>
+
+
+<style>
+    .registered-users {
+        color: #fff;
+        text-shadow: 1px 1px #000;
+    }
+
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 4px 4px #000;
+    }
+
+    h4 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 4px 4px #000;
+    }
+
+    label[for="username"], label[for="password"] {
+        color: white;
+        text-shadow: 4px 4px #000;
+        background-color: transparent;
+        transition: all 0.2s;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+    }
+
+    .col-md-4 {
+        background-color: #000000;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .control-label {
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+    }
+
+    .form-control {
+        border: none;
+        background-color: #000000 border-radius: 0;
+        border-bottom: 2px solid #000000;
+        box-shadow: none;
+        font-size: 16px;
+        padding: 10px 0;
+        transition: all 0.3s;
+        width: 370px;
+    }
+
+        .form-control:focus {
+            border-bottom: 2px solid #c00;
+            box-shadow: none;
+            outline: none;
+        }
+
+    .btn-primary {
+        background-color: #c00;
+        border: none;
+        border-radius: 5px;
+        box-shadow: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        transition: all 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0EE30C;
+            cursor: pointer;
+        }
+
+    .text-danger {
+        color: #0EE30C;
+    }
+
+    a {
+        color: #000000;
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+</style>

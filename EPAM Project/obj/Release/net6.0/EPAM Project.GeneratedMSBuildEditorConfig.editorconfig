@@ -1,0 +1,97 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EPAM_Project
+build_property.RootNamespace = EPAM_Project
+build_property.ProjectDir = C:\Users\babya\Desktop\CoreSubjects 3-2\.Net\project\EPAM Project\EPAM Project\EPAM Project\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\babya\Desktop\CoreSubjects 3-2\.Net\project\EPAM Project\EPAM Project\EPAM Project
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Admin/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Menupage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51cGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/PaymentResult.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXltZW50UmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Home/ViewDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Registers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Registers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Registers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Registers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Registers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/babya/Desktop/CoreSubjects 3-2/.Net/project/EPAM Project/EPAM Project/EPAM Project/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-z8dy2u4la7

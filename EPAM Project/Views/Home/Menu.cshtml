@@ -1,0 +1,242 @@
+﻿@model EPAM_Project.Views.Home.MenuViewModel
+
+@{
+    ViewData["Title"] = "View Menu";
+}
+
+
+
+<h1>@ViewData["Title"]</h1>
+
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="search-bar">
+    <form onsubmit="search(event)">
+        <input type="text" placeholder="Search..." id="searchInput">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+
+@if (Model == null || !Model.Items.Any())
+{
+    <p>No items found</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>
+                        <button type="button" onclick="addItem('@item.Name', @item.Price)">+</button>
+                        <button type="button" onclick="removeItem('@item.Name', @item.Price)">-</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <b> <p>Total amount: <span id="totalAmount">0.00</span></p> </b>
+}
+
+@section Scripts {
+    <script>
+        var items = [];
+        var totalAmount = 0;
+
+        function addItem(name, price) {
+            items.push({ name: name, price: price });
+            totalAmount += price;
+            document.getElementById("totalAmount").innerHTML = totalAmount.toFixed(2);
+        }
+
+        function removeItem(name, price) {
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].name === name && items[i].price === price) {
+                    items.splice(i, 1);
+                    totalAmount -= price;
+                    document.getElementById("totalAmount").innerHTML = totalAmount.toFixed(2);
+                    break;
+                }
+            }
+        }
+    </script>
+}
+<a asp-action="Payment" asp-controller="Home" class="btn btn-primary">Pay</a>
+
+<style>
+    body {
+        background-color: #5BB8F2;
+    }
+    /* Style for the table */
+    table {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    /* Style for the table header */
+    th {
+        text-align: left;
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Style for the table rows */
+    tr {
+        background-color: #F1FF00;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Style for the table rows when hovered */
+        tr:hover {
+            background-color: #fff;
+        }
+
+    /* Style for the table cells */
+    td {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Style for the buttons */
+    button {
+        background-color: #2980b9;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Style for the buttons when hovered */
+        button:hover {
+            background-color: #1a5276;
+        }
+
+    /* Style for the View Cart button */
+    .btn {
+        background-color: #F0FF26;
+        border: none;
+        color: #000000;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Style for the View Cart button when hovered */
+        .btn:hover {
+            background-color: #00FF0E;
+            color:#000000;
+        }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Style the search field */
+    form.example input[type=text] {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid grey;
+        float: left;
+        width: 80%;
+        background: #f1f1f1;
+    }
+
+    /* Style the submit button */
+    form.example button {
+        float: left;
+        width: 20%;
+        padding: 10px;
+        background: #2196F3;
+        color: white;
+        font-size: 17px;
+        border: 1px solid grey;
+        border-left: none; /* Prevent double borders */
+        cursor: pointer;
+    }
+
+        form.example button:hover {
+            background: #0b7dda;
+        }
+
+    /* Clear floats */
+    form.example::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    #totalAmount {
+      
+        color: white;
+    }
+
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+    }
+
+        .search-bar form {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .search-bar input[type="text"] {
+            border: none;
+            padding: 8px;
+            font-size: 16px;
+            width: 100%;
+            margin-right: 4px;
+        }
+
+        .search-bar button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+            .search-bar button[type="submit"]:hover {
+                background-color: #3e8e41;
+            }
+
+
+
+</style>
+

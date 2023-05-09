@@ -1,0 +1,607 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+}
+
+
+<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=6c9a4d4743232' async='true'></script>
+<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=6c9a4d4743232' async='true'></script>
+<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=6c9a4d4743232' async='true'></script>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <b>
+
+        <div class="delivery-address">
+            <h3>Delivery address</h3>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addressModal">
+                CHANGE
+            </button>
+            <p>Home</p>
+            <p>03-174, Nutakki, Mangalagirimandal, Guntur dist, Andhra Pradesh 522303, India</p>
+            <p>22 MINS Delivery Time</p>
+        </div>
+        <div class="payment-method">
+            <h3>Choose payment method</h3>
+            <form>
+                <input type="radio" id="wallets" name="payment" value="Wallets">
+                <label for="wallets">Wallets</label><br>
+
+                <input type="radio" id="upi" name="payment" value="UPI">
+                <label for="upi">UPI</label><br>
+
+                <input type="radio" id="sodexo" name="payment" value="Sodexo">
+                <label for="sodexo">Sodexo</label><br>
+
+                <input type="radio" id="netbanking" name="payment" value="Netbanking">
+                <label for="netbanking">Netbanking</label><br>
+
+                <input type="radio" id="cards" name="payment" value="Credit & Debit cards">
+                <label for="cards">Credit & Debit cards</label><br>
+
+                <input type="radio" id="amazonpay" name="payment" value="Amazon Pay">
+                <label for="amazonpay">Amazon Pay</label><br>
+
+                <input type="radio" id="paytm" name="payment" value="Paytm">
+                <label for="paytm">Paytm</label><br>
+
+                <input type="radio" id="phonepe" name="payment" value="PhonePe (Wallet/UPI/Cards)">
+                <label for="phonepe">PhonePe (Wallet/UPI/Cards)</label><br>
+
+                <input type="radio" id="mobikwik" name="payment" value="MobiKwik">
+                <label for="mobikwik">MobiKwik</label><br>
+
+                <input type="radio" id="freecharge" name="payment" value="Freecharge">
+                <label for="freecharge">Freecharge</label><br>
+            </form>
+
+            <button onclick="window.location.href='@Url.Action("PaymentResult", "Home")'">PAY  &#8377;767</button>
+            <p>LINK ACCOUNT</p>
+        </div>
+        <div class="order-summary">
+            <h3>Bill Details</h3>
+            <table>
+                <tr>
+                    <td>Item Total</td>
+                    <td>&#8377;698</td>
+                </tr>
+                <tr>
+                    <td>Delivery Fee | 3.5 kms</td>
+                    <td>&#8377;37.50</td>
+                </tr>
+                <tr>
+                    <td>Govt Taxes & Other Charges</td>
+                    <td>&#8377;31.50</td>
+                </tr>
+                <tr>
+
+                    <td> <button onclick="window.location.href='@Url.Action("PaymentResult", "Home")'">TO PAY  &#8377;767</button></td>
+                </tr>
+            </table>
+
+            <form>
+                <label>
+                    <input type="checkbox" name="no-contact" value="yes">
+                    Opt in for No-contact Delivery
+                </label>
+                <p>Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)</p>
+
+                <h2>Apply Coupon and Get 10% off Now!!!</h2>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>Apply Discount Coupon</h3>
+                        <form>
+                            <label for="couponCode">Coupon Code:</label>
+                            <input type="text" id="couponCode" name="couponCode"><br><br>
+                            <input type="button" value="Claim Coupon" onclick="generateCoupon()">
+                            <input type="button" value="Apply Coupon" onclick="applyCoupon()">
+                        </form>
+                    </div>
+                </div>
+
+                <button id="myBtn" onclick="openModal()">Apply Discount Coupon</button>
+
+                <script>
+                    var modal = document.getElementById("myModal");
+                    var btn = document.getElementById("myBtn");
+                    var span = document.getElementsByClassName("close")[0];
+
+                    function openModal() {
+                        modal.style.display = "block";
+                    }
+
+                    function closeModal() {
+                        modal.style.display = "none";
+                    }
+
+                    function generateCoupon() {
+                        var couponCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+                        document.getElementById("couponCode").value = couponCode;
+                    }
+
+                    function applyCoupon() {
+                        var couponCode = document.getElementById("couponCode").value;
+                        // Here you can use the couponCode to apply discount to the order
+                        closeModal();
+                    }
+
+                    span.onclick = function () {
+                        closeModal();
+                    }
+
+                    window.onclick = function (event) {
+                        if (event.target == modal) {
+                            closeModal();
+                        }
+                    }
+                </script>
+
+            </form>
+        </div>
+        <div class="feedback">
+            <h2>Feedback</h2>
+            <form>
+                <label for="suggestion">Any suggestions? We will pass it on...</label><br />
+                <textarea id="suggestion" name="suggestion"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+            <br />
+            <p>Note : Avoid cancellation as it leads to food wastage.</p>
+            <a href="cancellation-policy.cshtml">Read cancellation policy</a>
+        </div>
+
+        <div class="company-info">
+            <h2>Company info</h2>
+            <p>Some company information here...</p>
+        </div>
+
+
+        <!-- Address Modal -->
+        <div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addressModalLabel">Edit Delivery Address</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addressForm">
+                            <div class="form-group">
+                                <label for="deliveryAddress">Delivery Address:</label>
+                                <select class="form-control" id="deliveryAddress" name="deliveryAddress" required>
+                                    <option value="">Select delivery address</option>
+                                    <option value="Home">Home</option>
+                                    <option value="Office">Office</option>
+                                    <option value="Blue Dart">Blue Dart</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullName">Full Name:</label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressLine1">Address Line 1:</label>
+                                <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="Enter address line 1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressLine2">Address Line 2:</label>
+                                <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="Enter address line 2">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City:</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Enter city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State:</label>
+                                <input type="text" class="form-control" id="state" name="state" placeholder="Enter state" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pincode">Pincode:</label>
+                                <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter pincode" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" id="saveAddressBtn">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fullscreen-bg">
+            <video id="bg-video" autoplay loop muted>
+                <source src="~/videos/video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+
+        <script>
+            $(document).ready(function () {
+                // Edit address button click event
+                $("#changeAddressBtn").click(function () {
+                    $("#fullName").val("John Doe");
+                    $("#addressLine1").val("123 Main St");
+                    $("#addressLine2").val("");
+                    $("#city").val("Anytown");
+                    $("#state").val("CA");
+                    $("#pincode").val("12345");
+                    $("#addressModal").modal("show");
+                });
+
+                // Save changes from modal form
+                $("#saveAddressBtn").click(function () {
+                    var fullName = $("#fullName").val();
+                    var addressLine1 = $("#addressLine1").val();
+                    var addressLine2 = $("#addressLine2").val();
+                    var city = $("#city").val();
+                    var state = $("#state").val();
+                    var pincode = $("#pincode").val();
+
+                    // Update address fields on Checkout page
+                    $("#addressFullName").text(fullName);
+                    $("#addressLine1").text(addressLine1);
+                    $("#addressLine2").text(addressLine2
+                                        // Save changes from modal form
+                                        $("#saveAddressBtn").click(function () {
+                        var fullName = $("#fullName").val();
+                        var addressLine1 = $("#addressLine1").val();
+                        var addressLine2 = $("#addressLine2").val();
+                        var city = $("#city").val();
+                        var state = $("#state").val();
+                        var pincode = $("#pincode").val();
+
+                        // Update address fields on Checkout page
+                        $("#addressFullName").text(fullName);
+                        $("#addressLine1").text(addressLine1);
+                        $("#addressLine2").text(addressLine2);
+                        $("#addressCityStatePincode").text(city + ", " + state + " " + pincode);
+
+                        // Hide modal
+                        $("#addressModal").modal("hide");
+                    });
+        </script>
+
+    </b>
+</body>
+</html>
+
+<style>
+
+    body {
+        background-color: #3BE6D3;
+    }
+  
+
+    /* Style for delivery address */
+    .delivery-address {
+        margin-bottom: 30px;
+    }
+
+        .delivery-address h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .delivery-address p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .delivery-address button {
+            margin-top: 10px;
+        }
+
+    /* Style for payment method */
+    .payment-method {
+        margin-bottom: 30px;
+    }
+
+        .payment-method h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .payment-method form {
+            margin-bottom: 10px;
+        }
+
+        .payment-method input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .payment-method label {
+            font-size: 18px;
+        }
+
+        .payment-method button {
+            display: block;
+            margin-top: 20px;
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .payment-method p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+    /* Style for order summary */
+    .order-summary {
+        margin-bottom: 30px;
+    }
+
+        .order-summary h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .order-summary table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .order-summary th, .order-summary td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .order-summary th {
+            font-size: 18px;
+        }
+
+        .order-summary td {
+            font-size: 16px;
+        }
+
+        .order-summary button {
+            display: block;
+            margin-top: 20px;
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .order-summary form {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .order-summary label {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .order-summary input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .order-summary button[type="submit"] {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .order-summary p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .order-summary a {
+            font-size: 16px;
+        }
+
+    /* Style for feedback */
+    .feedback {
+        margin-top: 30px;
+    }
+
+        .feedback h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .feedback form {
+            margin-bottom: 20px;
+        }
+
+        .feedback label {
+            font-size: 18px;
+            margin-right: 10px;
+            color: transparent;e
+        }
+
+
+        .feedback textarea {
+            width: 100%;
+            height: 150px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            background-color: transparent;
+            font-weight: bold;
+            color: black;
+        }
+
+
+  
+        .feedback button[type="submit"] {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            border: none;
+        
+             padding: 0;
+        }
+
+    .fullscreen-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -100;
+    }
+
+    #bg-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+   
+
+    /* Coupon code input field */
+    form label {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    form input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 18px;
+    }
+
+    form input[type=button] {
+        background-color: #39AD0B;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        form input[type=button]:hover {
+            background-color: #45a049;
+        }
+
+    /* Coupon code input field highlight */
+    form input[type=text]:focus {
+        border: 2px solid #4CAF50;
+    }
+
+    /* Coupon code input field highlight when filled with generated code */
+    form input[type=text]:valid {
+        border: 2px solid #4CAF50;
+        background-color: #f2fff1;
+    }
+
+    /* Generate Coupon button style */
+    form input[type=button]:first-child {
+        background-color: #1E90FF;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        form input[type=button]:first-child:hover {
+            background-color: #0040ff;
+        }
+
+    /* Apply Coupon button style */
+    form input[type=button]:last-child {
+        background-color: #FF4500;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        form input[type=button]:last-child:hover {
+            background-color: #ff5d00;
+            /* CSS for the modal overlay */
+            .modal
+
+    {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    }
+
+    /* CSS for the modal content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+    }
+
+    /* CSS for the close button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+</style>

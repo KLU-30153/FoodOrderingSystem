@@ -1,0 +1,129 @@
+﻿@model EPAM_Project.Models.Register
+
+@{
+    ViewData["Title"] = "Edit User";
+}
+
+<h1>Edit the Users.</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Uid" />
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+           
+        </form>
+        <div>
+
+            <center> <a class="btn btn-secondary" asp-action="Index">Back to List</a> </center>
+        </div>
+       
+    </div>
+   
+</div>
+
+
+<div>
+    <br />
+    <br />
+    <br /><br /><br /><br /><br />
+</div>
+
+
+<style>
+
+    /* Style for the form */
+    body {
+        background-color: #3BE6D3;
+    }
+
+    h1, h4 {
+        text-align: center;
+        color: #000000;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh;
+    }
+    form {
+        margin: 50px auto;
+        width: 100%;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Style for the form input fields */
+    .form-control {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+    }
+
+    /* Style for the form submit button */
+    .btn-primary {
+        background-color: #2980b9;
+        color: #000000;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        /* Style for the form submit button when hovered */
+        .btn-primary:hover {
+            background-color: #0EE30C;
+        }
+
+    /* Style for the error messages */
+    .text-danger {
+        color: #c00;
+        font-size: 12px;
+    }
+
+    /* Style for the link to go back to the list */
+   
+    
+        /* Style for the link to go back to the list when hovered */
+        a:hover {
+        text-decoration: underline;
+        }
+
+    a.btn-secondary {
+        background-color: #FF8513;
+    }
+
+        a.btn-secondary:hover {
+            background-color: #2196F3;
+            color: #000000;
+        }
+
+
+</style>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

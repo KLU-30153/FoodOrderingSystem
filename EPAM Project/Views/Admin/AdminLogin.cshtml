@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Admin Login";
+}
+@model AdminLoginViewModel
+
+<h1>Admin's Login</h1>
+<video id="bg-video" autoplay loop muted>
+    <source src="~/videos/video3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+@using (Html.BeginForm("AdminLogin", "Admin"))
+{
+    @Html.AntiForgeryToken()
+    <b>
+    <div>
+        @Html.LabelFor(m => m.Username)
+        @Html.TextBoxFor(m => m.Username)
+        @Html.ValidationMessageFor(m => m.Username)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password)
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    </b>
+    <button type="submit" class="btn-primary"><b>Login</b></button>
+    <div>
+        <br>
+    </div>
+
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            Incorrect username or password.
+        </div>
+    }
+    @if (TempData["Script"] != null)
+    {
+        <script>
+            @TempData["Script"]
+        </script>
+    }
+
+}
+
+
+
+
+
+<style>
+    /* General styles */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #f7f7f7;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Header styles */
+
+   
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 4px 4px #000;
+    }
+
+    /* Video styles */
+
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    /* Form styles */
+
+    form {
+        border: none;
+        background-color: #000000 border-radius: 0;
+        border-bottom: 2px solid #000000;
+        box-shadow: none;
+        font-size: 16px;
+        padding: 10px 0;
+        transition: all 0.3s;
+        width: 370px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+
+    label {
+        color: white;
+        text-shadow: 4px 4px #000;
+        background-color: transparent;
+        transition: all 0.2s;
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #c00;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+        background-color: #c00;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        transition: all 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0EE30C;
+        }
+
+    .error-message {
+        color: #c00;
+        font-size: 0.8em;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
+    /* Footer styles */
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    .btn-primary {
+        background-color: #c00;
+        border: none;
+        border-radius: 5px;
+        box-shadow: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        transition: all 0.3s;
+    }
+        a:hover {
+            text-decoration: underline;
+        }
+
+</style>

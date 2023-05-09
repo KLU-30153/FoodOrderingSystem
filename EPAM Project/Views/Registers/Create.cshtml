@@ -1,0 +1,144 @@
+﻿@model EPAM_Project.Models.Register
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<video id="bg-video" autoplay loop muted>
+    <source src="~/videos/video1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<h1><b>🍕🍟🥪 𝐅𝐨𝐨𝐝 𝐎𝐫𝐝𝐞𝐫𝐢𝐧𝐠 𝐒𝐲𝐬𝐭𝐞𝐦 🥙🥡🍖</b></h1>
+
+<h4>𝑺𝒊𝒈𝒏𝑼𝒑!</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Uid" class="control-label"></label>
+                <input asp-for="Uid" class="form-control" />
+                <span asp-validation-for="Uid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control" required minlength="8" maxlength="16" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <span asp-validation-for="Password" class="text-danger" data-val-length="Password should be between 8 and 16 characters" data-val-length-min="8" data-val-length-max="16"></span>
+                <span asp-validation-for="Password" class="text-danger" data-val-regex="Password should contain at least one uppercase letter, one lowercase letter, and one number" data-val-regex-pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<style>
+    .registered-users {
+        color: #fff;
+        text-shadow: 1px 1px #000;
+    }
+
+    #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+    }
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 4px 4px #000;
+    }
+
+    h4 {
+        text-align: center;
+        color: #fff;
+        text-shadow: 4px 4px #000;
+    }
+
+
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+    }
+
+    .col-md-4 {
+        background-color: #000000 border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        
+        color: #fff;
+        text-shadow: 2px 2px #000;
+    }
+
+    .form-control {
+        border: none;
+        background-color: #000000 border-radius: 0;
+        border-bottom: 2px solid #000000;
+        box-shadow: none;
+        font-size: 16px;
+        padding: 10px 0;
+        transition: all 0.3s;
+    }
+
+        .form-control:focus {
+            border-bottom: 2px solid #c00;
+            box-shadow: none;
+            outline: none;
+        }
+
+    .btn-primary {
+        background-color: #c00;
+        border: none;
+        border-radius: 5px;
+        box-shadow: none;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px 20px;
+        transition: all 0.3s;
+    }
+        
+        .btn-primary:hover {
+            background-color: #0EE30C;
+            cursor: pointer;
+        }
+
+    .text-danger {
+        color: #0EE30C;
+    }
+
+    a {
+        color: #000000
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+</style>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

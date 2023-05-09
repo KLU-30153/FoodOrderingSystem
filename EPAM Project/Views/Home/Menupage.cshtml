@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Menu Page";
+}
+
+<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=6c9a4d4743232' async='true'></script>
+
+<!DOCTYPE html>
+<html>
+<div class="menu-container">
+    <div class="menu-item">
+        <img src="https://example.com/food-item-1.jpg" alt="Food Item 1">
+        <h3>Food Item 1</h3>
+        <p>Description of Food Item 1</p>
+        <span>$10.00</span>
+    </div>
+    <div class="menu-item">
+        <img src="https://example.com/food-item-2.jpg" alt="Food Item 2">
+        <h3>Food Item 2</h3>
+        <p>Description of Food Item 2</p>
+        <span>$12.00</span>
+    </div>
+    <div class="menu-item">
+        <img src="https://example.com/food-item-3.jpg" alt="Food Item 3">
+        <h3>Food Item 3</h3>
+        <p>Description of Food Item 3</p>
+        <span>$8.00</span>
+    </div>
+</div>
+
+</html>
+
+
+
+
+
+<style>
+
+    .menu-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.menu-item {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item h3 {
+  margin: 10px;
+}
+
+.menu-item p {
+  margin: 10px;
+}
+
+.menu-item span {
+  display: block;
+  margin: 10px;
+  font-weight: bold;
+}
+
+
+</style>

@@ -1,0 +1,179 @@
+﻿@model IEnumerable<EPAM_Project.Models.Register>
+
+@{
+    ViewData["Title"] = "User's List";
+}
+
+<script id='pixel-script-poptin' src='https://cdn.popt.in/pixel.js?id=6c9a4d4743232' async='true'></script>
+
+<h1>List Of Users</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@item.Uid">Edit</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Uid">Details</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Uid">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div>
+    <h2>Don't have an Account?</h2>
+
+    <p>
+        <a class="btn btn-success" asp-action="Create">Sign Up</a>
+    </p>
+</div>
+
+
+<div2>
+    <h2>Logout as Admin ?</h2>
+   <p>
+        <div>
+            <a class="btn btn-danger" asp-controller="Home" asp-action="Index">Admin Logout</a>
+        </div>
+    </p>
+</div2>
+
+<style>
+
+     body {
+        background-color: #3BE6D3;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Style for the table */
+    .table {
+        margin: 50px auto;
+        width: 80%;
+        border-collapse: collapse;
+        border: 1px solid #000000;
+    }
+
+    /* Style for the table header */
+    table th {
+        background-color: #fff;
+        color: #000000;
+        text-align: left;
+        padding: 10px;
+        border: 1px solid #000000;
+    }
+
+    /* Style for the table rows */
+    table td {
+        padding: 10px;
+        border: 1px solid #000000;
+    }
+
+    /* Style for the link buttons */
+    a.btn {
+        display: inline-block;
+        color: #fff;
+        text-align: center;
+        padding: 6px 12px;
+        margin: 5px;
+        border-radius: 5px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Style for the link buttons when hovered */
+        a.btn:hover {
+            opacity: 0.8;
+        }
+
+    /* Style for the "Create New" button */
+    p a.btn {
+        display: inline-block;
+        background-color: #4CAF50;
+    }
+
+        /* Style for the "Create New" button when hovered */
+        p a.btn:hover {
+            background-color: #087f23;
+        }
+
+    /* Style for the navbar */
+    nav {
+        background-color: #2196F3;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+        /* Style for the navbar links */
+        nav a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            /* Style for the navbar links when hovered */
+            nav a:hover {
+                background-color: #fff;
+                color: #2196F3;
+            }
+
+
+
+    /* Style for the "Create New" button */
+    p a {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+        /* Style for the "Create New" button when hovered */
+        p a:hover {
+            background-color: #087f23;
+        }
+
+    div a.btn.btn-danger {
+        background-color: #DC3545;
+    }
+
+        div a.btn.btn-danger:hover {
+            background-color: #C82333;
+        }
+
+    div2 {
+        position: fixed;
+        top: 15%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+</style>
